@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be97b5a4-2009-46b3-8062-e358ad9a03c4" name="Default Changelist" comment="added images">
-      <change afterPath="$PROJECT_DIR$/src/fish.js" afterDir="false" />
+    <list default="true" id="be97b5a4-2009-46b3-8062-e358ad9a03c4" name="Default Changelist" comment="changed images">
+      <change afterPath="$PROJECT_DIR$/public/productList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/productList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shop-homepage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/angler.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/angler.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/cheeks.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/cheeks.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/electric.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/electric.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/feet.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/feet.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/ghost.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/ghost.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/gold.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/gold.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/guy.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/guy.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/lisp.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/lisp.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/mask.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/mask.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/noodle.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/noodle.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/nose.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/nose.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/pog.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/pog.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/purple.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/purple.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/spongebob.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/spongebob.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/yellow.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/yellow.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fish.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,8 +33,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -35,16 +56,21 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\mandd\WebstormProjects\untitled3\public\fish" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mandd\WebstormProjects\untitled3\public" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -72,6 +98,9 @@
       <updated>1613680922493</updated>
       <workItem from="1613680923756" duration="6551000" />
       <workItem from="1613759297693" duration="169000" />
+      <workItem from="1613872209590" duration="33000" />
+      <workItem from="1613930952889" duration="21504000" />
+      <workItem from="1613955929053" duration="4782000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1613681283595</created>
@@ -101,15 +130,35 @@
       <option name="project" value="LOCAL" />
       <updated>1613683215443</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="changed images">
+      <created>1613872227592</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1613872227592</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="added images" />
-    <option name="LAST_COMMIT_MESSAGE" value="added images" />
+    <MESSAGE value="changed images" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed images" />
   </component>
 </project>
