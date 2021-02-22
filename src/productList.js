@@ -1,19 +1,19 @@
 var fish = [
-    {fish: 'Angler', image: 'img/angler.png', price: 24.99, color: 'brown', scary: true, water: true, show: true},
-    {fish: 'Cheeks', image: 'img/cheeks.png', price: 11.99, color: 'yellow', scary: false, water: true, show: true},
-    {fish: 'Electric', image: 'img/electric.png', price: 29.99, color: 'clear', scary: true, water: true, show: true},
-    {fish: 'Feet', image: 'img/feet.png', price: 3.99, color: 'purple', scary: false, water: true, show: true},
-    {fish: 'Ghost', image: 'img/ghost.png', price: 19.99, color: 'clear', scary: true, water: true, show: true},
-    {fish: 'Gold', image: 'img/gold.png', price: 9.99, color: 'yellow', scary: false, water: true, show: true},
-    {fish: 'Guy', image: 'img/guy.png', price: 12.99, color: 'brown', scary: false, water: false, show: true},
-    {fish: 'Lisp', image: 'img/lisp.png', price: 49.99, color: 'gray', scary: true, water: true, show: true},
-    {fish: 'Mask', image: 'img/mask.png', price: 19.99, color: 'yellow', scary: true, water: false, show: true},
-    {fish: 'Noodle', image: 'img/noodle.png', price: 34.99, color: 'brown', scary: true, water: true, show: true},
-    {fish: 'Nose', image: 'img/nose.png', price: 19.99, color: 'gray', scary: true, water: true, show: true},
-    {fish: 'Pog', image: 'img/pog.png', price: 99.99, color: 'gray', scary: false, water: true, show: true},
-    {fish: 'Purple', image: 'img/purple.png', price: 9.99, color: 'purple', scary: false, water: true, show: true},
-    {fish: 'Spongebob', image: 'img/spongebob.png', price: 39.99, color: 'yellow', scary: false, water: false, show: true},
-    {fish: 'Yellow', image: 'img/yellow.png', price: 14.99, color: 'yellow', scary: false, water: true, show: true},
+    {fish: 'Angler', image: '../img/angler.png', price: 24.99, color: 'brown', scary: true, water: true, show: true},
+    {fish: 'Cheeks', image: '../img/cheeks.png', price: 11.99, color: 'yellow', scary: false, water: true, show: true},
+    {fish: 'Electric', image: '../img/electric.png', price: 29.99, color: 'clear', scary: true, water: true, show: true},
+    {fish: 'Feet', image: '../img/feet.png', price: 3.99, color: 'purple', scary: false, water: true, show: true},
+    {fish: 'Ghost', image: '../img/ghost.png', price: 19.99, color: 'clear', scary: true, water: true, show: true},
+    {fish: 'Gold', image: '../img/gold.png', price: 9.99, color: 'yellow', scary: false, water: true, show: true},
+    {fish: 'Guy', image: '../img/guy.png', price: 12.99, color: 'brown', scary: false, water: false, show: true},
+    {fish: 'Lisp', image: '../img/lisp.png', price: 49.99, color: 'gray', scary: true, water: true, show: true},
+    {fish: 'Mask', image: '../img/mask.png', price: 19.99, color: 'yellow', scary: true, water: false, show: true},
+    {fish: 'Noodle', image: '../img/noodle.png', price: 34.99, color: 'brown', scary: true, water: true, show: true},
+    {fish: 'Nose', image: '../img/nose.png', price: 19.99, color: 'gray', scary: true, water: true, show: true},
+    {fish: 'Pog', image: '../img/pog.png', price: 99.99, color: 'gray', scary: false, water: true, show: true},
+    {fish: 'Purple', image: '../img/purple.png', price: 9.99, color: 'purple', scary: false, water: true, show: true},
+    {fish: 'Spongebob', image: '../img/spongebob.png', price: 39.99, color: 'yellow', scary: false, water: false, show: true},
+    {fish: 'Yellow', image: '../img/yellow.png', price: 14.99, color: 'yellow', scary: false, water: true, show: true},
 ];
 var ids =[
     {name: 'name1', image: 'img1', price: 'price1', show: 'display1'},
@@ -32,95 +32,42 @@ var ids =[
     {name: 'name14', image: 'img14', price: 'price14', show: 'display14'},
     {name: 'name15', image: 'img15', price: 'price15', show: 'display15'},
 ];
-function color(color){
-    for(var i=0;i<fish.length;i++){
-        if (fish[i].color == color){
-                fish[i].show = document.getElementById(color).checked ? true : false;
+var colors = ['brown', 'clear', 'gray', 'purple','yellow'];
+
+function colorChecker(color){
+        return document.getElementById(color).checked;
+}
+function color(string){
+    for(var i=0;i<colors.length;i++) {
+        if (string == colors[i]){
+            return colorChecker(colors[i]);
         }
     }
-    render(fish);
 }
-document.querySelector('#brown').addEventListener('change', function(event){
-    color('brown')
-});
-document.querySelector('#clear').addEventListener('change', function(event){
-    color('clear')
-});
-document.querySelector('#gray').addEventListener('change', function(event){
-    color('gray')
-});
-document.querySelector('#purple').addEventListener('change', function(event){
-    color('purple')
-});
-document.querySelector('#yellow').addEventListener('change', function(event){
-    color('yellow')
-});
-function price(min, max){
+function price(price){
+    var min = document.getElementById("minPrice").value;
+    var max = document.getElementById("maxPrice").value;
     if(min == ''){
         min = '0';
     }
     if(max == ''){
         max = '999';
     }
-    for(var i=0;i<fish.length;i++) {
-        if (fish[i].price >= parseInt(min) && fish[i].price <= parseInt(max)) {
-            fish[i].show = true;
-        }
-        else{
-            fish[i].show = false;
-        }
-    }
-    render(fish);
+    return (price >= parseInt(min) && price <= parseInt(max))
 }
-document.querySelector('#minPrice').addEventListener('keyup', function(event){
-    price(document.getElementById("minPrice").value, document.getElementById("maxPrice").value);
-});
-document.querySelector('#maxPrice').addEventListener('keyup', function(event){
-    price(document.getElementById("minPrice").value, document.getElementById("maxPrice").value);
-});
-function scary(value){
-    if(value == 'Both'){
-        for(var i=0;i<fish.length;i++){
-            fish[i].show = true;
-        }
+function dropCheck(value, bool){
+    switch(value){
+        case 'Both':
+            return true;
+        case 'Yes':
+            return bool;
+        case 'No':
+            return !bool;
     }
-    if(value == 'Yes'){
-        for(var i=0;i<fish.length;i++){
-            fish[i].show = fish[i].scary ? true: false;
-        }
-    }
-    if(value == 'No'){
-        for(var i=0;i<fish.length;i++){
-            fish[i].show = fish[i].scary ? false: true;
-        }
-    }
-    render(fish);
 }
-document.querySelector('#scary').addEventListener('change', function(event){
-    scary(event.target.value);
-});
-function water(value){
-    if(value == 'Both'){
-        for(var i=0;i<fish.length;i++){
-            fish[i].show = true;
-        }
-    }
-    if(value == 'Yes'){
-       // $.each(fish, function())
-        for(var i=0;i<fish.length;i++){
-            fish[i].show = fish[i].water ? true : false;
-        }
-    }
-    if(value == 'No'){
-        for(var i=0;i<fish.length;i++) {
-            fish[i].show = fish[i].water ? false : true;
-        }
-    }
-    render(fish);
+function drop(list){
+    return (dropCheck(document.getElementById("water").value, list.water) && dropCheck(document.getElementById("scary").value, list.scary));
 }
-document.querySelector('#water').addEventListener('change', function(event){
-    water(event.target.value);
-});
 function orderBy(sortValue) {
 
     var sortedResults = (sortValue === 'fish') ?
@@ -139,16 +86,16 @@ function orderBy(sortValue) {
         });
     render(sortedResults);
 }
-document.querySelector('#orderBy').addEventListener('change', function(event){
-    orderBy(event.target.value);
-});
-function valueChecker(list){
-
+function valuesChecker(list){
+    for(var i=0;i<list.length;i++) {
+        list[i].show = (price(list[i].price) && color(list[i].color) && drop(list[i]));
+    }
+    render(list);
 }
 function render(list){
     for(var i=0;i<list.length;i++){
-        document.getElementById(ids[i].name).innerHTML =list[i].fish+' Fish';
-        document.getElementById(ids[i].image).src=list[i].image;
+        document.getElementById(ids[i].name).innerHTML = list[i].fish+' Fish';
+        document.getElementById(ids[i].image).src = list[i].image;
         document.getElementById(ids[i].price).innerHTML ='$'+list[i].price;
         toggleShow(list[i].show, ids[i].show);
     }
@@ -162,3 +109,70 @@ function toggleShow(show, tag){
         getTag.style.display = 'none';
     }
 }
+document.querySelector('#brown').addEventListener('change', function(event){
+    //color('brown')
+    valuesChecker(fish);
+});
+document.querySelector('#clear').addEventListener('change', function(event){
+    //color('clear')
+    valuesChecker(fish);
+});
+document.querySelector('#gray').addEventListener('change', function(event){
+    //color('gray')
+    valuesChecker(fish);
+});
+document.querySelector('#purple').addEventListener('change', function(event){
+    //color('purple')
+    valuesChecker(fish);
+});
+document.querySelector('#yellow').addEventListener('change', function(event){
+    //color('yellow')
+    valuesChecker(fish);
+});
+document.querySelector('#orderBy').addEventListener('change', function(event){
+    orderBy(event.target.value);
+});
+document.querySelector('#minPrice').addEventListener('keyup', function(event){
+    //price(document.getElementById("minPrice").value, document.getElementById("maxPrice").value);
+    valuesChecker(fish);
+});
+document.querySelector('#maxPrice').addEventListener('keyup', function(event){
+    //price(document.getElementById("minPrice").value, document.getElementById("maxPrice").value);
+    valuesChecker(fish);
+});
+document.querySelector('#scary').addEventListener('change', function(event){
+    //scary(event.target.value);
+    valuesChecker(fish);
+});
+document.querySelector('#water').addEventListener('change', function(event){
+    //water(event.target.value);
+    valuesChecker(fish);
+});
+
+
+var Page2 = function(var1, var2){
+    var test = var1,
+        test2 = function(var3){
+            return "test2" + var2 + var3;
+        };
+    return{
+        Test: test,
+        Test2: test2
+    }
+};
+
+
+var Page = function(var1, var2){
+    var test = var1,
+        test3 = new Page2("eryert","eyueuy"),
+        test2 = function(var3){
+        return "test2" + var2 + var3;
+        };
+    return{
+        Test: test,
+        Test2: test2,
+        Test3: test3
+    }
+}();
+
+
