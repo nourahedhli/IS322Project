@@ -150,29 +150,3 @@ document.querySelector('#water').addEventListener('change', function(event){
 });
 
 
-var Page2 = function(var1, var2){
-    var test = var1,
-        test2 = function(var3){
-            return "test2" + var2 + var3;
-        };
-    return{
-        Test: test,
-        Test2: test2
-    }
-};
-
-
-var Page = function(var1, var2){
-    var test = var1,
-        test3 = new Page2("eryert","eyueuy"),
-        test2 = function(var3){
-        return "test2" + var2 + var3;
-        };
-    return{
-        Test: test,
-        Test2: test2,
-        Test3: test3
-    }
-}();
-
-
