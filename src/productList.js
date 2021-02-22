@@ -33,18 +33,9 @@ var ids =[
     {name: 'name15', image: 'img15', price: 'price15', show: 'display15'},
 ];
 function color(color){
-    if(document.getElementById(color).checked){
-        for(var i=0;i<15;i++){
-            if (fish[i].color == color){
-                fish[i].show = true;
-            }
-        }
-    }
-    else{
-        for(var i=0;i<15;i++){
-            if (fish[i].color == color){
-                fish[i].show = false;
-            }
+    for(var i=0;i<fish.length;i++){
+        if (fish[i].color == color){
+                fish[i].show = document.getElementById(color).checked ? true : false;
         }
     }
     render(fish);
@@ -65,6 +56,12 @@ document.querySelector('#yellow').addEventListener('change', function(event){
     color('yellow')
 });
 function price(min, max){
+    if(min == ''){
+        min = '0';
+    }
+    if(max == ''){
+        max = '999';
+    }
     for(var i=0;i<fish.length;i++) {
         if (fish[i].price >= parseInt(min) && fish[i].price <= parseInt(max)) {
             fish[i].show = true;
@@ -89,22 +86,12 @@ function scary(value){
     }
     if(value == 'Yes'){
         for(var i=0;i<fish.length;i++){
-            if (fish[i].scary){
-                fish[i].show = true;
-            }
-            else{
-                fish[i].show = false;
-            }
+            fish[i].show = fish[i].scary ? true: false;
         }
     }
     if(value == 'No'){
         for(var i=0;i<fish.length;i++){
-            if (!fish[i].scary){
-                fish[i].show = true;
-            }
-            else{
-                fish[i].show = false;
-            }
+            fish[i].show = fish[i].scary ? false: true;
         }
     }
     render(fish);
@@ -121,22 +108,12 @@ function water(value){
     if(value == 'Yes'){
        // $.each(fish, function())
         for(var i=0;i<fish.length;i++){
-            if (fish[i].water){
-                fish[i].show = true;
-            }
-            else{
-                fish[i].show = false;
-            }
+            fish[i].show = fish[i].water ? true : false;
         }
     }
     if(value == 'No'){
-        for(var i=0;i<fish.length;i++){
-            if (!fish[i].water){
-                fish[i].show = true;
-            }
-            else{
-                fish[i].show = false;
-            }
+        for(var i=0;i<fish.length;i++) {
+            fish[i].show = fish[i].water ? false : true;
         }
     }
     render(fish);
@@ -148,8 +125,8 @@ function orderBy(sortValue) {
 
     var sortedResults = (sortValue === 'fish') ?
         fish.sort(function (a, b) {
-            var nameA = a.name.toUpperCase();
-            var nameB = b.name.toUpperCase();
+            var nameA = a.fish.toUpperCase();
+            var nameB = b.fish.toUpperCase();
             if (nameA < nameB) {
                 return -1;
             }
@@ -158,19 +135,22 @@ function orderBy(sortValue) {
             }
         }) :
         fish.sort(function (a, b) {
-            return a[sortValue] - b[sortValue];
-    render(sortedResults);
+            return a.price - b.price;
         });
+    render(sortedResults);
 }
 document.querySelector('#orderBy').addEventListener('change', function(event){
     orderBy(event.target.value);
 });
+function valueChecker(list){
+
+}
 function render(list){
     for(var i=0;i<list.length;i++){
-        document.getElementById(ids[i].name).src=fish[i].fish;
-        document.getElementById(ids[i].image).src=fish[i].image;
-        document.getElementById(ids[i].price).src='$'+fish[i].price;
-        toggleShow(fish[i].show, ids[i].show);
+        document.getElementById(ids[i].name).innerHTML =list[i].fish+' Fish';
+        document.getElementById(ids[i].image).src=list[i].image;
+        document.getElementById(ids[i].price).innerHTML ='$'+list[i].price;
+        toggleShow(list[i].show, ids[i].show);
     }
 }
 function toggleShow(show, tag){
