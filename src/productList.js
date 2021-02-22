@@ -34,13 +34,10 @@ var ids =[
 ];
 var colors = ['brown', 'clear', 'gray', 'purple','yellow'];
 
-function colorChecker(color){
-        return document.getElementById(color).checked;
-}
 function color(string){
     for(var i=0;i<colors.length;i++) {
         if (string == colors[i]){
-            return colorChecker(colors[i]);
+            return document.getElementById(colors[i]).checked;
         }
     }
 }
