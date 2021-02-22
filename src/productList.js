@@ -169,7 +169,7 @@ function render(list){
     for(var i=0;i<list.length;i++){
         document.getElementById(ids[i].name).src=fish[i].fish;
         document.getElementById(ids[i].image).src=fish[i].image;
-        document.getElementById(ids[i].price).src=fish[i].price;
+        document.getElementById(ids[i].price).src='$'+fish[i].price;
         toggleShow(fish[i].show, ids[i].show);
     }
 }
